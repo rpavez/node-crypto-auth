@@ -1,0 +1,29 @@
+{
+  "name": "crypto-auth",
+  "version": "1.0.0",
+  "description": "API Authentication Middleware based on Signed-Certificates (SHA-256) and Token based session with limited TTL.",
+  "main": "crypto-auth.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": "git@github.com:rpavez/node-crypto-auth.git",
+  "keywords": [
+    "api",
+    "authentication",
+    "authentication",
+    "auth",
+    "middleware",
+    "key-pair",
+    "certificate",
+    "crypto",
+    "auth"
+  ],
+  "author": "Rodrigo Pavez",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "licenseFilename": "LICENSE",
+  "dependencies": {
+    "colors": "~0.6.2",
+    "formidable": "~1.0.14"
+  }
+}
