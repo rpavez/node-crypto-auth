@@ -4,7 +4,7 @@ node-crypto-auth
 middleware for Node.js implementing API Auth based on  SSL Certificate
 authentication/authorization
 
-Copyright © May,2014 Rodrigo Pavez
+Copyright © May, 2014 Rodrigo Pavez
 
 [![Build Status](https://travis-ci.org/rpavez/node-crypto-auth.png)](https://travis-ci.org/rpavez/node-crypto-auth)
 
@@ -22,8 +22,6 @@ How it works
 2. You sign one or more certificates and distribute to users you want to have access this service
 3. They execute a REST call sending this certificate in order to get a temporary access token.
 4. They can safely use this token to execute requests
-
-THIS INTENDED TO USE ADDITIONALLY TO HTTPS FOR IMPROVED SECURITY
 
 How generate certificates
 ----------------------------
