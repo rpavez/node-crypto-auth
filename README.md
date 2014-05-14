@@ -63,7 +63,7 @@ Usage (Using Express)
 Testing (with curl)
 -------------------
 (Go to crypto-auth and run node express-example.js to launch the example )
-curl -F certificate=@certificates/auth.crt -X POST http://localhost:3000/api/requestToken
+    curl -F certificate=@certificates/auth.crt -X POST http://localhost:3000/api/requestToken
     curl -H "token: 123456789" -X POST http://localhost:3000/api/check
 
 
