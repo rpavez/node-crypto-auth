@@ -30,12 +30,12 @@ How generate certificates
 
 Generate Private key and Self-Signed Certificate
 ------------------------------------------------
-openssl req -nodes -sha256 -newkey rsa:2048 -keyout auth.key -out auth.csr
-openssl req -new -key auth.key -out auth.csr
+    npm testopenssl req -nodes -sha256 -newkey rsa:2048 -keyout auth.key -out auth.csr
+    npm testopenssl req -new -key auth.key -out auth.csr
 
 Generate New Signed Certificates
 --------------------------------
-openssl x509 -req -days 365 -in auth.csr -signkey auth.key -out auth.crt
+    openssl x509 -req -days 365 -in auth.csr -signkey auth.key -out auth.crt
 (You can also include -startdate YYMMDDHHMMSSZ - The format of the date is YYMMDDHHMMSSZ (the same as an ASN1 UTCTime structure)
 
 Installing
@@ -48,31 +48,31 @@ node-crypto-auth is available from [npm](https://npmjs.org/package/node-crypto-a
 Usage (Using Express)
 ---------------------
 
-var authProvider = require('./crypto-auth')(
-{
-	debug: true, 
-	jsonTokenStore: false,
-	privateKey: require('path').resolve(__dirname,'certificates','auth.key')
-});
-
-app.post('/api/requestToken',authProvider.requestToken);
-
-app.post('/api/check',authProvider.auth ,function(req,res){
-    return res.json({success: true});
-});
+    var authProvider = require('./crypto-auth')(
+    {
+    	debug: true, 
+    	jsonTokenStore: false,
+    	privateKey: require('path').resolve(__dirname,'certificates','auth.key')
+    });
+    
+    app.post('/api/requestToken',authProvider.requestToken);
+    
+    app.post('/api/check',authProvider.auth ,function(req,res){
+        return res.json({success: true});
+    });
 
 
 Testing (with curl)
 -------------------
 (Go to crypto-auth and run node express-example.js to launch the example )
 curl -F certificate=@certificates/auth.crt -X POST http://localhost:3000/api/requestToken
-curl -H "token: 123456789" -X POST http://localhost:3000/api/check
+    curl -H "token: 123456789" -X POST http://localhost:3000/api/check
 
 
 Testing (with npm)
 ---------------
-Run npm test (It will verify scripts work and OpenSSL is correctly installed.)
-
+    npm test
+(It will verify scripts work and OpenSSL is correctly installed.)
 
 Notes
 -----
